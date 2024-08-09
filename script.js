@@ -411,7 +411,7 @@ class Ground {
 const player = new Player();
 const npcs = [
     //Bunny
-    new Npc({ x: (canvas.width * 0.8), y: (canvas.height * 0.5), h: (canvas.width * 0.023), w: (canvas.width * 0.023), image: rabbit, dialog: ["*Bunny*: Hi there! Did you know that new research methods can save animals like me?", "*You*: Really? How?", "*Bunny*: With advanced technologies, we can replace animal testing. This means a safer and kinder world for all of us. Your support can make a big difference!"] }),
+    new Npc({ x: (canvas.width * 1.8), y: (canvas.height * 0.5), h: (canvas.width * 0.023), w: (canvas.width * 0.023), image: rabbit, dialog: ["*Bunny*: Hi there! Did you know that new research methods can save animals like me?", "*You*: Really? How?", "*Bunny*: With advanced technologies, we can replace animal testing. This means a safer and kinder world for all of us. Your support can make a big difference!"] }),
     //People
     new Npc({x: (canvas.width * 0.15), y: (canvas.width * 0.225), h: peopleheight, w: peoplewidth, image: lab3, dialog: ["*Woman 1*: Welcome, to the Lawrence Livermore National Laboratory!", "*Woman 1*: Did you know that many scientific experiments are still conducted on animals? It's a tough issue because it involves ethical concerns and the well-being of animals.", "*You*: That's terrible! Is there anything being done to change this?", "*Woman 1*: Indeed, researchers are actively seeking alternatives. At Lawrence Livermore National Laboratory, scientists are pioneering methods to reduce and replace animal testing. Let's find out more!"] }),
     new Npc({ x: (canvas.width * 0.17), y: (canvas.height * 0.1), h: peopleheight, w:peoplewidth, image: lab4, dialog: ["*Woman 2*: Greetings my friend!", "*You*: Hello!", "*Woman 2*: Are you here to learn about the amazing work being done at Lawrence Livermore National Laboratory?", "*You*: Yes, tell me more!", "*Woman 2*: LLNL is at the forefront of developing computational models and advanced imaging technologies. These methods can simulate how substances affect human cells, reducing the need for animal testing."] }),
@@ -457,6 +457,8 @@ const walls = [
     //Panels
     new Wall({x: (canvas.width * 0.055), y: canvas.height * 0.85 , width: canvas.width * 0.12, height: canvas.height*0.15, image: panel}),
     new Wall({x: (canvas.width * 0.055) + (canvas.width * 0.12), y: canvas.height * 0.85 , width: canvas.width * 0.12, height: canvas.height*0.15, image: panel}),
+
+    
 ];
 
 const grounds = [

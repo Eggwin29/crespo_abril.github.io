@@ -1,5 +1,161 @@
-*{
+body {
     margin: 0;
     padding: 0;
+    overflow: hidden; /* Para que el canvas ocupe toda la pantalla sin scrollbars */
+    background-image: url('images/v2.jfif');
+}
+#dialogue {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: blue;
+    border-radius: 5px;
+    display: none; /* Oculta el cuadro de diálogo por defecto */
+    z-index: 10; /* Asegura que el cuadro esté sobre el canvas */
+}
+#start-screen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    flex-direction: column;
+    color: #ffffff;
+}
+
+#end-screen {   
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0, 0, 0);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    flex-direction: column;
+}
+#start-button, #credits {
+    width: 30%;
+    height: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 1.5vw; /* Tamaño de la fuente relativo al ancho del viewport */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    text-decoration: none; /* Elimina el subrayado por defecto en los enlaces */
+    color: white;
+    background: blue;
+    transition: background-color 0.3s ease;
+}
+#credits{
+    padding: 0;
+}
+
+#start-button {
+    background: blue;
+}
+
+#start-button:hover {
+    background-color: rgb(37, 37, 252);
+}
+
+#start-button:active {
+    background: rgba(0, 0, 255, 0.511);
+}
+
+#credits {
+    background-color: aliceblue;
+    color: black;
+    margin-top: 1em;
+    
+}
+a{
+    font-family: sans-serif;
+    font-weight: 700;
+    
+}
+
+#credits:hover {
+    background-color: rgb(223, 240, 255);
+}
+
+#credits:active {
+    background-color: rgba(240, 248, 255, 0.463);
+}
+
+h1 {
+    color: white;
+    font-family: sans-serif;
+    font-size: 3vw;
+}
+h2 {
+    color: gold;
+    font-family: sans-serif;
+    font-size: 2.5vw;
+}
+
+h3{
+ font-family: sans-serif;
+}
+.text-container {
+    margin-top: 10px; /* Espacio entre el h1 y el texto */
+    font-size: 1vw; /* Tamaño de la fuente relativo al ancho del viewport */
+    padding: 0 25% 0 25%;
+    background: white;
+    width: 80%;
+    min-height: 40%;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-bottom: 2em;
+    color: black;
+    font-family: sans-serif;
+}
+
+#recargarBtn, .btn-ref {
+    padding: 14px 28px; 
+    cursor: pointer; 
+    border-radius: 5px;
+    border: 2px solid gold;
+    color: gold;
+    font-weight: bold;
+    background-color: transparent;
+    display: inline-block;
+    transition: 0.3s;
+    text-decoration: none;
+
+}
+
+.btn-ref{
+    color: white;
+    border: 2px solid white;
+    padding: 12px 26px; 
+
+}
+
+
+
+span{
+    font-style: italic;
+    font-weight: bold;
+}
+
+#text-one, #text-two, #text-three, #text-four{
+
+    
+
 }
 

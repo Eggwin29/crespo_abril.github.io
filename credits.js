@@ -1,29 +1,53 @@
-// Define los textos que se mostrarán
-const texts = [
-
-    "Press 'Enter' to read the information",
-    "Problem: The current method for developing new drugs and antidotes relies heavily on animal testing, which is costly, time-consuming, and often provides inaccurate data about human responses.",
-    'Solution: LLNL is developing a "human-on-a-chip" technology called iCHIP to simulate various human biological systems. This miniature replica of the human body aims to replace animal testing by providing a more accurate and efficient platform for testing drugs, toxins, and other substances.',
-    "Challenges: Despite promising initial results, there are still challenges to overcome. These include: Fully integrating different organ systems onto a single chip to create a complete human body model.",
-    "Ensuring the long-term viability and functionality of the simulated tissues and organs. Gaining widespread acceptance and regulatory approval for the use of human-on-chip technology in drug development.",
+// Define los IDs de los divs que contienen los textos
+const textDivs = [
+    'text-one',
+    'text-two',
+    'text-three',
+    'text-four',
+    'text-five',
+    'text-six'
 ];
 
-let currentTextIndex = -1;
+let currentDivIndex = -2; // Inicializa en -2 para sincronizar con los primeros textos
 
-// Obtén el elemento del contenedor de texto en #end-screen
+// Obtén el contenedor de texto y los títulos en #end-screen
 const textContainer = document.getElementById('text-container');
+const titleOne = document.getElementById('title-one');
+const subtitleOne = document.getElementById('subtitle-one');
+const titleTwo = document.getElementById('title-two');
+const subtitleTwo = document.getElementById('subtitle-two');
 
-// Función para mostrar el siguiente texto
+// Función para mostrar el siguiente texto junto con el título y subtítulo
 function showNextText() {
     if (document.getElementById('end-screen').style.display === 'flex') {
-        // Muestra el siguiente texto
-        if (currentTextIndex < texts.length) {
-            textContainer.textContent = texts[currentTextIndex];
-            currentTextIndex++;
+        // Incrementa el índice para mostrar el siguiente div
+        currentDivIndex = (currentDivIndex + 1) % textDivs.length;
+
+        // Oculta todos los divs de texto
+        textDivs.forEach(id => {
+            const div = document.getElementById(id);
+            if (div) div.style.display = 'none';
+        });
+
+        // Muestra el div de texto correspondiente
+        const currentDiv = document.getElementById(textDivs[currentDivIndex]);
+        if (currentDiv) {
+            currentDiv.style.display = 'block';
+        }
+
+        // Actualiza el título y subtítulo en función del índice actual
+        if (currentDivIndex < 3) {
+            // Para los primeros 3 textos
+            titleOne.style.display = 'block';
+            subtitleOne.style.display = 'block';
+            titleTwo.style.display = 'none';
+            subtitleTwo.style.display = 'none';
         } else {
-            // Resetea el índice si has mostrado todos los textos
-            currentTextIndex = 0;
-            textContainer.textContent = texts[currentTextIndex];
+            // Para los siguientes textos
+            titleOne.style.display = 'none';
+            subtitleOne.style.display = 'none';
+            titleTwo.style.display = 'block';
+            subtitleTwo.style.display = 'block';
         }
     }
 }
@@ -34,6 +58,3 @@ document.addEventListener('keydown', (event) => {
         showNextText();
     }
 });
-
-// Muestra el #end-screen cuando se hace clic en el botón de inicio
-

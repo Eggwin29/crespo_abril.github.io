@@ -3,153 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden; /* Para que el canvas ocupe toda la pantalla sin scrollbars */
-            background-image: url('images/v2.jfif');
-        }
-        #dialogue {
-            position: absolute;
-            top: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 10px;
-            background: rgba(0, 0, 0, 0.7);
-            color: blue;
-            border-radius: 5px;
-            display: none; /* Oculta el cuadro de diálogo por defecto */
-            z-index: 10; /* Asegura que el cuadro esté sobre el canvas */
-        }
-        #start-screen {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            flex-direction: column;
-            color: #ffffff;
-        }
-
-        #end-screen {   
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgb(0, 0, 0);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-            flex-direction: column;
-            display: none;
-            color: white; /* Asegura que el texto sea visible sobre el fondo negro */
-        }
-        #start-button, #credits {
-            width: 30%;
-            height: 5%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            font-size: 1.5vw; /* Tamaño de la fuente relativo al ancho del viewport */
-            background: blue;
-            color: white;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-        }
-
-        #start-button:hover{
-            background-color: rgb(37, 37, 252);
-        }
-
-        #credits:hover{
-            background-color: rgb(223, 240, 255);
-        }
-
-        #start-button:active{
-            background: rgba(0, 0, 255, 0.511);
-        }
-        #credits:active{
-            background-color: rgba(240, 248, 255, 0.463);
-        }
-
-
-        #credits{
-            background-color: aliceblue;
-            color: black;
-            margin-top: 1em;
-            width: 30%;
-        }
-
-
-        h1 {
-            color: white;
-            font-family: sans-serif;
-            font-size: 3vw;
-        }
-        h2{
-            color: gold;
-            font-family: sans-serif;
-            font-size: 2.5vw;
-        }
-        .text-container {
-            margin-top: 20px; /* Espacio entre el h1 y el texto */
-            font-size: 1.5vw; /* Tamaño de la fuente relativo al ancho del viewport */
-            padding: 0 25% 0 25%;
-        }
-
-        #recargarBtn{
-            border: none; 
-            color: black; 
-            padding: 14px 28px; 
-            cursor: pointer; 
-            border-radius: 5px; 
-        }
-    </style>
+    <title>Crespo Abril - Game</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="start-screen">
-        <h1>An end to Animal testing on the Biomedical Field</h1>
+        <h1>An end to Animal testing in the Biomedical Field</h1>
         <h2>Abril Crespo</h2>
+        <h3>Please interact with all of the characters to complete the game</h3>
         <button id="start-button">Start</button>
-        <button id="credits">Credits</button>
+        <a href="references.html" id="credits">References</a>
     </div>
 
     <div id="end-screen">
-        <h1>"'Human-on-a-chip' could replace animal testing"</h1>
-        <h2>by Lawrence Livermore National Laboratory (LLNL)</h2>
-        <div id="text-container" class="text-container"></div>
-        <button id="recargarBtn">Play Again</button>
+        <h1 id = "title-one">An end to Animal Testing in the Biomedical field</h1>
+        <h2 id = "subtitle-one"></h2>
+        <h1 id = "title-two">'Human-on-a-chip' could replace animal testing</h1>
+        <h2 id = "subtitle-two">by Lawrence Livermore National Laboratory (LLNL)</h2>
+        <h3 style="color: gray;">Press <Span style="color: red;">"Enter"</Span> to move to the next slide</h3>
+        <div id="text-container" class="text-container">
+
+            <div id="text-one">
+                <h3>Overview of The Problem</h3>
+                <p>The traditional method for assessing the safety and efficacy of chemicals, drugs, and consumer products has relied heavily on animal testing. This practice raises significant ethical concerns due to the inherent suffering caused to animals. Moreover, animal models often fail to accurately predict human responses, leading to inefficient and costly research and development processes.</p>
+            </div>
+            <!-- ************* -->
+            <div id="text-two">
+                <h3>Alternative Approaches</h3>
+                <p>To address the limitations of animal testing, a multifaceted approach has emerged, focusing on a combination of methods:</p>
+                <p><span>In silico methods: </span>Computational models simulate biological systems to predict chemical properties and potential toxicity.</p>
+                <p><span>In vitro methods: </span>Experiments conducted on cells or tissues cultured in a laboratory setting provide data on cellular responses to substances.</p>
+                <p><span>Organ-on-chip technology: </span>This innovative approach creates artificial organs to mimic human physiology, offering a more accurate representation of drug or chemical interactions.</p>
+                <p><span>High-throughput screening (HTS): </span>Rapidly testing large numbers of compounds to identify potential drug candidates or toxic substances.</p>
+                <p><span>Omics technologies: </span>Analyzing the complete set of genes, proteins, or metabolites in a biological system to understand the effects of chemicals.</p>
+            
+            </div>
+            <!-- ************* -->
+
+            <div id="text-three">
+            <h3>While these alternative methods hold great promise, several challenges persist:</h3>
+            <p><span>Validation and acceptance: </span>Establishing the reliability and predictive power of alternative methods to gain regulatory acceptance is crucial.</p>
+            <p><span>Complexity of biological systems: </span>Fully capturing the intricacies of human biology in a simplified model remains a challenge.</p>
+            <p><span>Integration of data: </span>Combining information from various sources to create a comprehensive picture of a substance's effects requires sophisticated data analysis techniques.</p>
+            <p><span>Resource allocation: </span>Investing in the development and validation of alternative methods requires substantial financial resources and expertise.</p>
+            <p>Despite these challenges, the potential benefits of reducing or eliminating animal testing are substantial. By embracing a combination of these approaches, researchers can accelerate drug discovery, improve chemical safety assessment, and advance our understanding of human biology while protecting ethical principles.</p>
+            
+            </div>
+
+             <!-- ************* -->
+
+            <div id="text-four">
+                <h3>Problem</h3>
+                <p>The current method for developing new drugs and antidotes relies heavily on animal testing, which is costly, time-consuming, and often provides inaccurate data about human responses.
+                </p>
+            </div>
+             <!-- ************* -->
+            <div id="text-five">
+                <h3>Solution</h3>
+                <p>LLNL is developing a "human-on-a-chip" technology called iCHIP to simulate various human biological systems. This miniature replica of the human body aims to replace animal testing by providing a more accurate and efficient platform for testing drugs, toxins, and other substances.</p>
+            </div>
+             <!-- ************* -->
+            <div id="text-six">
+                <h3>Challenges</h3>
+                <p>Despite promising initial results, there are still challenges to overcome. These include:</p>
+                <ul>
+                    <li>Fully integrating different organ systems onto a single chip to create a complete human body model.</li>
+                    <li>Ensuring the long-term viability and functionality of the simulated tissues and organs.</li>
+                    <li>Gaining widespread acceptance and regulatory approval for the use of human-on-chip technology in drug development.</li>
+                </ul>
+            </div>
+             <!-- ************* -->
+        </div>
+        <div class="buttons">
+            <button id="recargarBtn">Play Again</button>
+            <a href="references.html" class="btn-ref">References</a>
+        </div>
+        
     </div>
-
-
 
     <canvas></canvas>
     <div id="dialogue"></div>
     <audio id="game-music" src="song.mp3" loop></audio>
     <audio id="lyrics" src="song_lyrics2.mp3" loop></audio>
     <script src="credits.js"></script>
+    <!--  -->
     <script src="script.js"></script>
 
     <script>
-        
         document.addEventListener('DOMContentLoaded', () => {
-    const botonRecargar = document.getElementById('recargarBtn');
-    botonRecargar.addEventListener('click', () => {
-        location.reload(); // Recargar la página
-    });
-});
+            const botonRecargar = document.getElementById('recargarBtn');
+            botonRecargar.addEventListener('click', () => {
+                location.reload(); // Recargar la página
+            });
+        });
     </script>
-    
 </body>
 </html>
